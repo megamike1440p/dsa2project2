@@ -1,3 +1,10 @@
+/***************************************************************
+  Student Name: Michael Whitten
+  File Name: AnalyticalModel.cpp
+  Assignment number: Project 2
+
+Calculates analytical model data based on user input
+***************************************************************/
 #include "AnalyticalModel.hpp"
 #include "Input.hpp"
 
@@ -9,13 +16,11 @@ AnalyticalModel::AnalyticalModel()
     this->m = input.getM();
     this->n = input.getN();
 
-    std::cout << "test pow: 3 cubed = " << pow(3, 0) << std::endl;
-    std::cout << "test factorial: 4 factorial = " << factorial(4) << std::endl;
-    std::cout << "test po with values lambda = 2, mu = 3, m = 2 expected 0.5: " << getPo() << std::endl;
-    std::cout << "test l with values lambda = 2, mu = 3, m = 2 expected 0.75: " << getL() << std::endl;
-    std::cout << "test w with values lambda = 2, mu = 3, m = 2 expected 0.375: " << getW() << std::endl;
-    std::cout << "test Lq with values lambda = 2, mu = 3, m = 2 expected 0.083: " << getLq() << std::endl;
-    std::cout << "test Wq with values lambda = 2, mu = 3, m = 2 expected 0.0.0417: " << getWq() << std::endl;
+    std::cout << "Po: " << getPo() << std::endl;
+    std::cout << "L: " << getL() << std::endl;
+    std::cout << "W: " << getW() << std::endl;
+    std::cout << "Lq: " << getLq() << std::endl;
+    std::cout << "Wq: " << getWq() << std::endl;
 }
 
 float AnalyticalModel::getPo()

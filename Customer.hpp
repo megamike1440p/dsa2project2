@@ -1,3 +1,10 @@
+/***************************************************************
+  Student Name: Michael Whitten
+  File Name: Customer.hpp
+  Assignment number: Project 2
+
+Stores information on customer arrival and departure times
+***************************************************************/
 #ifndef CUSTOMER_HPP
 #define CUSTOMER_HPP
 

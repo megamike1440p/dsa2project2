@@ -1,3 +1,10 @@
+/***************************************************************
+  Student Name: Michael Whitten
+  File Name: AnalyticalModel.hpp
+  Assignment number: Project 2
+
+  Calculates analytical model data based on user input
+***************************************************************/
 #ifndef ANALYTICALMODEL_HPP
 #define ANALYTICALMODEL_HPP
 #include <iostream>

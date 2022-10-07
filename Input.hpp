@@ -1,3 +1,10 @@
+/***************************************************************
+  Student Name: Michael Whitten
+  File Name: Input.hpp
+  Assignment number: Project 2
+
+Gathers user input and checks for errors
+***************************************************************/
 #ifndef INPUT_HPP
 #define INPUT_HPP
 #include <iostream>

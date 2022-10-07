@@ -1,3 +1,10 @@
+/***************************************************************
+  Student Name: Michael Whitten
+  File Name: Event.hpp
+  Assignment number: Project 2
+
+Responsible for generating arrival and departure events
+***************************************************************/
 #ifndef EVENT_HPP
 #define EVENT_HPP
 

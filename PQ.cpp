@@ -1,3 +1,10 @@
+/***************************************************************
+  Student Name: Michael Whitten
+  File Name: PQ.cpp
+  Assignment number: Project 2
+
+A priority queue for storing events
+***************************************************************/
 #include "PQ.hpp"
 
 /**
