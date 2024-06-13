@@ -7,6 +7,8 @@ Calculates analytical model data based on user input
 ***************************************************************/
 #include "AnalyticalModel.hpp"
 #include "Input.hpp"
+#include <cmath>
+#include <iostream>
 
 AnalyticalModel::AnalyticalModel()
 {
@@ -27,50 +29,55 @@ float AnalyticalModel::getPo()
 {
     float sum = 0;
 
-
-    for (int i = 0; i < m; i++){
-        sum += (1/(factorial(i)))*(pow(lambda/mu, i));
+    for (int i = 0; i < m; i++) {
+        sum += (1 / (factorial(i))) * (pow(lambda / mu, i));
     }
 
-    po = 1.0/((sum)+(1.0/(factorial(m)))*(pow(lambda/mu, m))*((m*mu)/(m*mu-lambda)));
+    float rho = lambda / (m * mu);
+    po = 1.0 / ((sum) + (1.0 / (factorial(m))) * (pow(lambda / mu, m)) * ((1.0) / (1.0 - rho)));
     return po;
 }
 
 float AnalyticalModel::getL()
 {
-    l = ((((lambda * mu) * (pow(lambda / mu, m))) / ((factorial(m-1))*(pow(m*mu-lambda, 2)))) * getPo()) + (lambda/mu);
+    float rho = lambda / (m * mu);
+    float lq = getLq();
+    l = lq + (lambda / mu);
     return l;
 }
 
-float AnalyticalModel::getW(){
-    w = ((mu*pow((lambda/mu), m))/((factorial(m-1)*pow((m*mu-lambda),2))))*getPo()+(1/mu);
+float AnalyticalModel::getW()
+{
+    w = getL() / lambda;
     return w;
 }
 
-float AnalyticalModel::getLq(){
-    lq = l-(lambda/mu);
+float AnalyticalModel::getLq()
+{
+    float rho = lambda / (m * mu);
+    lq = (((pow(lambda / mu, m) * rho) / (factorial(m) * pow(1 - rho, 2))) * getPo());
     return lq;
 }
 
-float AnalyticalModel::getWq(){
-    wq = w-(1/mu);
+float AnalyticalModel::getWq()
+{
+    wq = getLq() / lambda;
     return wq;
 }
 
-float AnalyticalModel::getRho(){
-    rho = lambda/(m*mu);
+float AnalyticalModel::getRho()
+{
+    rho = lambda / (m * mu);
     return rho;
 }
 
-
 float AnalyticalModel::pow(float base, float exp)
 {
-    if (exp == 0){
+    if (exp == 0) {
         return 1;
     }
     float result = base;
-    for (int i = 0; i < exp - 1; i++)
-    {
+    for (int i = 0; i < exp - 1; i++) {
         result *= base;
     }
     return result;
